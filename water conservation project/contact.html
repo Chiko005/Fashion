@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Water Conservation</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #fff;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input, textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: auto;
+}
+
+button {
+     background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer; 
+    /* width: 180px;
+    color: #000;
+    font-size: 12px;
+    padding: 12px 0;
+    background: #fff;
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+    margin-top: 30px; */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <p>If you have any questions or concerns, please feel free to reach out to us.</p>
+    </header>
+
+    <nav>
+        <li><a href="tips.html">Water Saving Tips</a></li>
+              <li><a href="calculator2.html">Water Usage Calculator</a></li>
+            <li><a href="facts.html">Water Conservation Facts</a></li>
+            <li><a href="pladge1.html">Water Conservation Pladge</a></li>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Contact Information</h2>
+            <p>Feel free to contact us using the following methods:</p>
+            <ul>
+                <li>Email: <a href="dhakera149@gmail.com">contact@yourwebsite.com</a></li>
+                <li>Phone: +91 8955319190</li>
+                <li>Address: lovely professional university</li>
+            </ul>
+        </section>
+
+        <section class="container">
+            <h2>Contact Form</h2>
+            <p>You can also send us a message using the contact form below:</p>
+            <form action="process_contact.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Add footer content if needed -->
+    </footer>
+</body>
+</html>

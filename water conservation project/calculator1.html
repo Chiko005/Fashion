@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Water Usage Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+</head>
+<body>
+    <h1>Water Usage Calculator</h1>
+
+    <form id="waterUsageForm">
+        <label for="numPeople">Number of people in your household: </label>
+        <input type="number" id="numPeople" required><br><br>
+
+        <label for="numShowers">Number of showers taken per day: </label>
+        <input type="number" id="numShowers" required><br><br>
+
+        <label for="numBaths">Number of baths taken per week: </label>
+        <input type="number" id="numBaths" required><br><br>
+
+        <label for="numToiletFlushes">Number of toilet flushes per day: </label>
+        <input type="number" id="numToiletFlushes" required><br><br>
+
+        <label for="numHandWashes">Number of times hands are washed per day: </label>
+        <input type="number" id="numHandWashes" required><br><br>
+
+        <label for="numDishWashes">Number of times dishes are washed per day: </label>
+        <input type="number" id="numDishWashes" required><br><br>
+
+        <label for="numLaundryLoads">Number of laundry loads per week: </label>
+        <input type="number" id="numLaundryLoads" required><br><br>
+
+        <button type="button" onclick="calculateWaterUsage()">Calculate</button><br><br>
+
+        <p id="result"></p>
+    </form>
+
+    <script>
+        function calculateWaterUsage() {
+            const numPeople = parseFloat(document.getElementById("numPeople").value);
+            const numShowers = parseFloat(document.getElementById("numShowers").value);
+            const numBaths = parseFloat(document.getElementById("numBaths").value);
+            const numToiletFlushes = parseFloat(document.getElementById("numToiletFlushes").value);
+            const numHandWashes = parseFloat(document.getElementById("numHandWashes").value);
+            const numDishWashes = parseFloat(document.getElementById("numDishWashes").value);
+            const numLaundryLoads = parseFloat(document.getElementById("numLaundryLoads").value);
+
+            const GALLONS_PER_SHOWER = 17;
+            const GALLONS_PER_BATH = 36;
+            const GALLONS_PER_TOILET_FLUSH = 1.6;
+            const GALLONS_PER_HAND_WASH = 2;
+            const GALLONS_PER_DISH_WASH = 6;
+            const GALLONS_PER_LAUNDRY_LOAD = 41;
+
+            const totalGallonsUsed = (numPeople * (numShowers * GALLONS_PER_SHOWER + numBaths * GALLONS_PER_BATH + numToiletFlushes * GALLONS_PER_TOILET_FLUSH + numHandWashes * GALLONS_PER_HAND_WASH + numDishWashes * GALLONS_PER_DISH_WASH) + numLaundryLoads * GALLONS_PER_LAUNDRY_LOAD);
+
+            document.getElementById("result").innerHTML = `Total water usage for your household is approximately ${totalGallonsUsed.toFixed(2)} gallons per day.`;
+        }
+    </script>
+</body>
+</html>

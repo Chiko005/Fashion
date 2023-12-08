@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Usage Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url(download.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #3498db;;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+        #result {
+            font-weight: bold;
+            color:black;
+        }
+        nav ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        nav li {
+            display: inline;
+             margin-right: 20px;
+            }
+        </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index1.html">Home</a></li>
+            <li><a href="tips.html">Water Saving Tips</a></li>
+            
+            <li><a href="facts.html">Water Conservation Facts</a></li>
+            <li><a href="pladge1.html">Water Conservation Pladge</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Water Usage Calculator</h1>
+        <form id="water-usage-form">
+            <label for="shower">Shower (minutes):</label>
+            <input type="number" id="shower" min="0" step="1" value="0">
+
+            <label for="toilet-flush">Toilet Flushes:</label>
+            <input type="number" id="toilet-flush" min="0" step="1" value="0">
+
+            <label for="dishwasher">Dishwasher (times):</label>
+            <input type="number" id="dishwasher" min="0" step="1" value="0">
+
+            <label for="washing-machine">Washing Machine (times):</label>
+            <input type="number" id="washing-machine" min="0" step="1" value="0">
+
+            <button type="button" onclick="calculateWaterUsage()">Calculate</button>
+        </form>
+
+        <p id="result">Estimated daily water usage: 0 gallons</p>
+    </div>
+
+    <script>
+        function calculateWaterUsage() {
+            const shower = parseInt(document.getElementById('shower').value, 10);
+            const toiletFlushes = parseInt(document.getElementById('toilet-flush').value, 10);
+            const dishwasher = parseInt(document.getElementById('dishwasher').value, 10);
+            const washingMachine = parseInt(document.getElementById('washing-machine').value, 10);
+
+            const waterUsage = shower * 2 + toiletFlushes * 3 + dishwasher * 6 + washingMachine * 12;
+
+            document.getElementById('result').textContent = `Estimated daily water usage: ${waterUsage} gallons`;
+        }
+    </script>
+</body>
+</html>
